@@ -1,0 +1,9 @@
+---
+- name: Show message
+  hosts: all
+  vars:
+    message: This is just a message!
+  tasks:
+  - name: Show message
+    debug:
+      msg: The message is: {{ message }} 
