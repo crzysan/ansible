@@ -1,0 +1,7 @@
+---
+- name: Hello world
+  hosts: all
+  tasks:
+  - name: check file
+    debug:
+      msg: Hello world from {{ inventory_hostname }}!
