@@ -1,0 +1,12 @@
+servers:
+  hosts:
+    ansible1:
+    ansible2:
+testing:
+  hosts:
+    test_server:
+      ansible_host: localhost
+all_servers:
+  children:
+    servers:
+    testing:
