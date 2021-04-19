@@ -1,0 +1,15 @@
+---
+- name: List all users from file
+  hosts: testing
+  tasks:
+  - name: read users list
+    debug:
+      msg: "{{ 'User: ' + item.name + ' has password: ' + user_pass }}"
+    vars:
+      user_pass: "{{ lookup('password', '/tmp/password-' + item.name + ' length=6') | password_hash('sha256', 'mysecretsalt') }}"
+    loop: "{{ users | flatten }}"
+  - name: add salt to password file
+    lineinfile:
+      path: "{{ item }}"
+      line: mysecretsalt
+    loop: "{{ lookup('fileglob', '/tmp/password-*', wantlist=True ) }}"

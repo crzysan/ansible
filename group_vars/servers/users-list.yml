@@ -1,0 +1,16 @@
+users:
+  - name: jet
+    first: jet
+    middle: raymond
+    last: lee
+    uid: 2000
+  - name: nancy
+    first: nancy
+    middle: melina
+    last: trump
+    uid: 2001
+  - name: brad
+    first: brad
+    middle: junior
+    last: cooper
+    uid: 2002
